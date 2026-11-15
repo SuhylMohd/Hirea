@@ -96,7 +96,7 @@ export default function HireaCompleteAppV3() {
   const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
   const [accountType, setAccountType] = useState<"candidate" | "employer" | "investor">("candidate");
   const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("suhail@hirea.in");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [authStatusMsg, setAuthStatusMsg] = useState("");
