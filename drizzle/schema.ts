@@ -4,10 +4,10 @@ export const appRoleEnum = pgEnum("app_role", ["candidate", "employer", "investo
 
 export const profiles = pgTable("profiles", {
   id: uuid("id").primaryKey(),
-  fullName: text("full_name").notNull().default("Muhammed Suhail T.M"),
+  fullName: text("full_name").notNull().default(""),
   headline: text("headline").notNull().default("Full-Stack Python & React Engineer"),
   companyName: text("company_name").notNull().default(""),
-  location: text("location").notNull().default("Pattambi / Kochi, Kerala"),
+  location: text("location").notNull().default(""),
   bio: text("bio").notNull().default(""),
   skills: text("skills").array().notNull().default([]),
   userScore: integer("user_score").notNull().default(820),

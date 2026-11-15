@@ -95,7 +95,7 @@ export default function HireaCompleteAppV3() {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
   const [accountType, setAccountType] = useState<"candidate" | "employer" | "investor">("candidate");
-  const [fullName, setFullName] = useState("Muhammed Suhail T.M");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("suhail@hirea.in");
   const [password, setPassword] = useState("");
   const [companyName, setCompanyName] = useState("");
@@ -142,7 +142,7 @@ export default function HireaCompleteAppV3() {
       const eco = ecoRaw ? JSON.parse(ecoRaw) : {};
       eco.resume = eco.resume || {};
       eco.resume.name = activeUser.name;
-      eco.resume.contact = `${activeUser.email} | Pattambi / Kochi, Kerala`;
+      eco.resume.contact = `${activeUser.email} | India`;
       localStorage.setItem("hirea_ecosystem_v3", JSON.stringify(eco));
     } catch {}
 
@@ -370,7 +370,7 @@ export default function HireaCompleteAppV3() {
 
     const loggedInUser: HireaAuthUser = {
       id: "usr-" + Date.now(),
-      name: authMode === "signup" ? fullName.trim() || "Muhammed Suhail T.M" : fullName.trim() || email.split("@")[0],
+      name: authMode === "signup" ? fullName.trim() || "Hirea User" : fullName.trim() || email.split("@")[0],
       email: email.trim(),
       accountType,
       companyName: companyName.trim(),
@@ -728,7 +728,7 @@ export default function HireaCompleteAppV3() {
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  placeholder="e.g. Muhammed Suhail T.M"
+                  placeholder="e.g. Aarav Nair"
                   className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm"
                 />
               </div>
